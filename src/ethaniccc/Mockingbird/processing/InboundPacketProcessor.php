@@ -537,6 +537,7 @@ class InboundPacketProcessor extends Processor{
                     $jwt = json_decode(base64_decode($parts[1]), true);
                     $id = $jwt['extraData']['titleId'];
                     $user->win10 = ($id === "896928775");
+                    $user->playerOS = $packet->clientData['DeviceOS'];
                 } catch(\Exception $e){}
                 break;
             case SetLocalPlayerAsInitializedPacket::NETWORK_ID:

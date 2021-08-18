@@ -11,6 +11,9 @@ permissions:
       mockingbird.alerts:
         description: Get Mockingbird anti-cheat alerts.
         default: op
+      mockingbird.bypass:
+        description: Allows the user to bypass Mockingbird's detections
+        default: op
       mockingbird.debug:
         description: Get Mockingbird debug messages in-game
         default: op

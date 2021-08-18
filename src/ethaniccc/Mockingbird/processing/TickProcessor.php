@@ -13,6 +13,7 @@ use pocketmine\network\mcpe\protocol\DataPacket;
 use pocketmine\network\mcpe\protocol\NetworkStackLatencyPacket;
 use pocketmine\network\mcpe\protocol\PlayerAuthInputPacket;
 use pocketmine\network\mcpe\protocol\ProtocolInfo;
+use pocketmine\network\mcpe\protocol\types\DeviceOS;
 use pocketmine\entity\Villager;
 use pocketmine\Server;
 
@@ -28,7 +29,7 @@ class TickProcessor extends RunnableProcessor{
     private $noResponseTicks = 0;
 
     public function run(User $user) : void{
-        if(!$user->loggedIn)
+        if(!$user->loggedIn || (Mockingbird::getInstance()->getConfig()->get('ps4-bypass') && $user->deviceOS === DeviceOS::PLAYSTATION))
             return;
         if(microtime(true) - $user->lastSentNetworkLatencyTime >= 1 && $user->responded){
             $user->player->dataPacket($user->latencyPacket);

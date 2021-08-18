@@ -11,7 +11,7 @@
 # Go forth and destroy those pesky hackers!
 
 # PLEASE DO NOT CHANGE THIS #
-version: 2.5.1
+version: 2.5.2
 
 prefix: "§l§7[§cMocking§4bird§7]"
 # {tag} => explanation of tag
@@ -41,6 +41,9 @@ alerts_default: true
 default_alert_delay: 2
 # When this option is enabled, every time Mockingbird is disabled, it will upload the debug log into a server so I can read for potential falses.
 upload_debug: true
+# Allows PS4 to bypass Mockingbird's derections since PS4 players doesn't send NetworkSackLatencyPacket as of now.
+# Change this option if this gets fixed in the future.
+ps4-bypass: true
 
 #   _____                 _           _
 #  /  __ \               | |         | |

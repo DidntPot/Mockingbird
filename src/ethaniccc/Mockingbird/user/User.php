@@ -20,6 +20,7 @@ use pocketmine\block\Block;
 use pocketmine\math\Vector3;
 use pocketmine\network\mcpe\protocol\DataPacket;
 use pocketmine\network\mcpe\protocol\NetworkStackLatencyPacket;
+use pocketmine\network\mcpe\protocol\types\DeviceOS;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat;
@@ -115,6 +116,9 @@ class User{
     public $hitData;
     /** @var TickData - The class that stores data updated every server tick. This data includes entity location history. */
     public $tickData;
+
+    /** @var int - The device OS that the user is currently using. */
+    public $deviceOS = DeviceOS::UNKNOWN;
 
     public function __construct(Player $player){
         $this->player = $player;
