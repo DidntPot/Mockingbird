@@ -1,23 +1,22 @@
 ---
 name: Mockingbird
-version: 2.5.2
+version: 1.0
 main: ethaniccc\Mockingbird\Mockingbird
-api: 3.19.0
-mcpe-protocol: [431, 440, 448]
+api: [3.0.0]
 
 permissions:
   mockingbird:
     children:
       mockingbird.alerts:
-        description: Get Mockingbird anti-cheat alerts.
+        description:
         default: op
       mockingbird.bypass:
-        description: Allows the user to bypass Mockingbird's detections
+        description:
         default: op
       mockingbird.debug:
-        description: Get Mockingbird debug messages in-game
+        description:
         default: op
       mockingbird.logs:
-        description: Get the anti-cheat logs of a player
+        description:
         default: op
 ...
